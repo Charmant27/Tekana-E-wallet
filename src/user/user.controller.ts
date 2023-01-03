@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Controller, Get, UseGuards } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
+import { JwtGuard } from '../auth/guard';
 import { User } from '@prisma/client';
 import { GetUser } from '../auth/decorator';
 import { UserService } from './user.service';
 
-@UseGuards(AuthGuard('jwt'))
+@UseGuards(JwtGuard)
 @Controller('users')
 export class UserController {
   constructor(private userService: UserService) {}
@@ -17,7 +17,7 @@ export class UserController {
     return user;
   }
 
-  //view all the customers 
+  //view all the customers
   @Get()
   getAllUsers() {
     return this.userService.getAllUsers();

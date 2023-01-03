@@ -46,6 +46,7 @@ export class AuthService {
           throw new ForbiddenException('credentials already in use!!!');
         }
       }
+      throw error;
     }
   }
 
@@ -79,7 +80,7 @@ export class AuthService {
   }
 
   async userToken(
-    id: number,
+    userId: number,
     firstName: string,
     lastName: string,
     email: string,
@@ -87,7 +88,7 @@ export class AuthService {
     gender: string,
   ): Promise<{ access_token: string; payload: object }> {
     const payload = {
-      sub: id,
+      sub: userId,
       firstName: firstName,
       lastName: lastName,
       email: email,

@@ -22,7 +22,9 @@ model User {
   gender      String
   password    String
 
-  wallet Wallet[]
+  wallets Wallet[]
+
+  @@map("users")
 }
 
 model Wallet {
@@ -35,6 +37,8 @@ model Wallet {
 
   userId Int
   user   User @relation(fields: [userId], references: [id])
+
+  @@map("wallets")
 }
 
 model Transaction {
@@ -46,4 +50,6 @@ model Transaction {
   amount               String
   currency             String
   balance              String
+
+  @@map("transactions")
 }
