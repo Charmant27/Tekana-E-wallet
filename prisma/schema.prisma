@@ -46,10 +46,9 @@ model Transaction {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  transactionReference String
-  amount               String
-  currency             String
-  balance              String
+  amount   String
+  currency String
+  balance  String
 
   @@map("transactions")
 }
