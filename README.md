@@ -7,7 +7,6 @@ Authentication
 Customers
 Wallet 
 Transactions
-fhrnnenje
 ## Project strategy 
 this is the detailed project strategy
 <a href="https://docs.google.com/document/d/1qvelV4VUp7hAvzzIGOYMYZbNty-nKp5htdVLfnKuO5s/edit">Project strategy</a>
